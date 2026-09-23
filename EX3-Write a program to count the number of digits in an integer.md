@@ -1,54 +1,52 @@
-# EX 1 You’re creating a health monitoring device which stores several sensor readings in an array. To determine the minimum value (e.g., lowest heartbeat), implement a recursive method.
-## DATE: 21/07/2026
+# EX3 Write a program to count the number of digits in an integer.
+## DATE: 25/07/2026
 ## AIM:
-To write a JAVA program To determine the minimum value (e.g., lowest heartbeat), implement a recursive method.
+To write a java program to implement Tower of Hanoi
 
 ## Algorithm
-1. Start 
-2. Read the number of elements (e.g., number of heartbeat readings).
-3. Store all readings in an array.
-4. Call a recursive function findMin(arr, index) If index == arr.length - 1, return arr[index] Else return min(arr[index], findMin(arr, index + 1)) 
-5. Print the minimum value returned by the recursive function.
-6. End
+1. Start the program.
+2. Read an integer from the user.
+3. Define a recursive function countDigits() that counts digits by dividing the number by 10 each time.
+4. Base condition: if the number is 0, return 0. 
+5. Recursive step: return 1 + countDigits(number / 10).
+6. Display the total count of digits.
+7. Stop the program.
 
 ## Program:
 ```
 /*
-Program To determine the minimum value (e.g., lowest heartbeat), implement a recursive method.
+Program to to count the number of digits in an integer
 Developed by: EASWAR R
 RegisterNumber:  212223230053
 */
 
-import java.util.*;
 
-public class Main {
-    static int getMin(int[] arr, int i, int n) {
-        if (i == n - 1) {
-            return arr[i];
-        }
+import java.util.Scanner;
 
-    
-        int minRest = getMin(arr, i + 1, n);
-       
-        return Math.min(arr[i], minRest);
+public class CountDigitsRecursive {
+    static int countDigits(int n) {
+        if (n == 0)
+            return 0;
+        return 1 + countDigits(n / 10);
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
         int n = sc.nextInt();
-        int[] arr = new int[n];
-        for (int i = 0; i < n; i++) {
-            arr[i] = sc.nextInt();
-        }
-        System.out.println(getMin(arr, 0, n));
+        if (n == 0)
+            System.out.println("Number of digits: 1");
+        else
+            System.out.println("Number of digits: " + countDigits(Math.abs(n)));
+        sc.close();
     }
 }
-
 ```
 
 ## Output:
 
-<img width="649" height="254" alt="515115850-e2c774aa-cc92-40f6-acb8-778042dd4078" src="https://github.com/user-attachments/assets/43216b3c-fd36-414b-b34f-1b8ab5631c93" />
+<img width="733" height="328" alt="514871770-912ff986-b3d6-4ddf-ad81-ae28ea3a19f5" src="https://github.com/user-attachments/assets/4f5620e3-4e4a-4257-add2-f8333afc5c04" />
+
 
 ## Result:
-Thus the JAVA prograM ti find the minimum value (e.g., lowest heartbeat), implement a recursive method has implemented successfully
+Thus, the Java program to to count the number of digits in an integer is implemented successfully.
